@@ -15,7 +15,7 @@ function G.UIDEF.settings_tab(tab)
     local setting_tab = setting_tabRef(tab)
 
     if tab == 'Game' then
-        local speeds = create_option_cycle({label = localize('b_set_gamespeed'), scale = 0.8, options = {0.25, 0.5, 1, 2, 3, 4, 8, 16}, opt_callback = 'change_gamespeed', current_option = (
+        local speeds = create_option_cycle({label = localize('b_set_gamespeed'), scale = 0.8, options = {0.25, 0.5, 1, 2, 3, 4, 8, 16, 32, 64, 128, 256}, opt_callback = 'change_gamespeed', current_option = (
             G.SETTINGS.GAMESPEED == 0.25 and 1 or
             G.SETTINGS.GAMESPEED == 0.5 and 2 or 
             G.SETTINGS.GAMESPEED == 1 and 3 or 
@@ -24,6 +24,10 @@ function G.UIDEF.settings_tab(tab)
             G.SETTINGS.GAMESPEED == 4 and 6 or 
             G.SETTINGS.GAMESPEED == 8 and 7 or 
             G.SETTINGS.GAMESPEED == 16 and 8 or 
+	    G.SETTINGS.GAMESPEED == 32 and 9 or 
+	    G.SETTINGS.GAMESPEED == 64 and 10 or 
+	    G.SETTINGS.GAMESPEED == 128 and 11 or 
+	    G.SETTINGS.GAMESPEED == 256 and 12 or 
             3 -- Default to 1 if none match, adjust as necessary
         )})
 
